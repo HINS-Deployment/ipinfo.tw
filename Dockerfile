@@ -5,7 +5,12 @@ ARG MAXMIND_LICENSE_KEY
 RUN mkdir /GeoLite2/
 WORKDIR /GeoLite2/
 
-ENV MAXMIND_BASE_URL "https://download.maxmind.com/app/geoip_download?license_key=$MAXMIND_LICENSE_KEY&"
+RUN if [ -z "$MAXMIND_LICENSE_KEY" ]; then \
+        echo "Error: MAXMIND_LICENSE_KEY is not set" >&2; \
+        exit 1; \
+    fi
+
+ENV MAXMIND_BASE_URL="https://download.maxmind.com/app/geoip_download?license_key=${MAXMIND_LICENSE_KEY}&"
 
 RUN wget "${MAXMIND_BASE_URL}edition_id=GeoLite2-ASN&suffix=tar.gz" -O GeoLite2-ASN.tar.gz
 RUN wget "${MAXMIND_BASE_URL}edition_id=GeoLite2-ASN&suffix=tar.gz.sha256" -O GeoLite2-ASN.tar.gz.sha256
