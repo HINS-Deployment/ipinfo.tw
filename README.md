@@ -10,6 +10,7 @@ A self-hosted, non-tracking, and ad-free solution to reveal client-side IP info 
 
 ## Table of Contents
 
+- [Features](#features)
 - [Demo](#demo)
 - [Usage](#usage)
   - [Deploy to DigitalOcean](#deploy-to-digitalocean)
@@ -21,6 +22,35 @@ A self-hosted, non-tracking, and ad-free solution to reveal client-side IP info 
 - [Credits](#credits)
 - [Sponsor](#sponsor)
 - [License](#license)
+
+## Features
+
+### 🌍 CORS Support | 跨域支持
+
+This fork adds full CORS (Cross-Origin Resource Sharing) support, allowing the API to be called from any web browser or web application.
+
+此分支添加了完整的 CORS（跨域资源共享）支持，允许从任何浏览器或 Web 应用程序调用 API。
+
+### 🏗️ Multi-Platform Images | 多平台镜像
+
+Daily automated builds for both `linux/amd64` and `linux/arm64` architectures, published to GitHub Container Registry and Docker Hub.
+
+每日自动构建 `linux/amd64` 和 `linux/arm64` 两种架构的镜像，发布到 GitHub Container Registry 和 Docker Hub。
+
+### 📅 Daily Auto-Build | 每日自动构建
+
+Images are automatically rebuilt daily at UTC 00:00 to ensure the GeoIP database is always up-to-date.
+
+镜像每天 UTC 00:00 自动重建，确保 GeoIP 数据库始终为最新版本。
+
+### 🐳 Container Registries | 容器仓库
+
+- **GitHub Container Registry**: `ghcr.io/wuhins/ipinfo.tw:latest`
+- **Docker Hub**: `docker.io/YOUR_USERNAME/ipinfo.tw:latest`
+
+Tags use date format `YYYYMMDD` (e.g., `20250329`) for easy version tracking.
+
+标签使用日期格式 `YYYYMMDD`（例如：`20250329`），方便版本追踪。
 
 ## Demo
 
